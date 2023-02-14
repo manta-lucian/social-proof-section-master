@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --color-Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --color-Soft-Pink: hsl(333, 80%, 67%);
+  --color-Dark-Grayish-Magenta: hsl(302, 10%, 53%);
+  --color-Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --color-White: hsl(0, 0%, 100%);
+
+  --fontsize-default: 1.5rem;
+}
+
+main {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--fontsize-default);
+  background-image: url("../images/bg-pattern-top-mobile.svg"), url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: left 0vw top 0vh, right 0vw bottom 0vh;
+}
+
+header {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 4rem;
+}
+.head-text {
+  margin-top: 3rem;
+}
+
+.head-text__title {
+  color: var(--color-Very-Dark-Magenta);
+  line-height: 1;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.head-text__text {
+  color: var(--color-Very-Dark-Magenta);
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.rating-item {
+  background-color: var(--color-Light-Grayish-Magenta);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+.rating-item__stars {
+  display: flex;
+  gap: 0.5rem;
+}
+.icon-star {
+  width: 17px;
+  height: 16px;
+}
+.rating-item__text {
+  color: var(--color-Very-Dark-Magenta);
+  font-weight: 700;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.testimonial-card {
+  background-color: var(--color-Very-Dark-Magenta);
+  padding: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 1rem;
+}
+.testimonial-card__avatarANDname {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.testimonial-card__image {
+  border-radius: 50%;
+  width: 4rem;
+}
+.testimonial-card__nameANDposition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+.testimonial-card__name {
+  color: var(--color-White);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.testimonial-card__position {
+  color: var(--color-Soft-Pink);
+  font-size: 1.4rem;
+}
+.testimonial-card__quote {
+  color: var(--color-White);
+  text-align: left;
+}
+
+@media (min-width: 1000px) {
+  header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10rem;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    max-width: 140rem;
+  }
+  main {
+    background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
+    height: 100vh;
+  }
+  .head-text {
+    align-self: center;
+    text-align: left;
+  }
+  .head-text__title {
+    color: var(--color-Very-Dark-Magenta);
+    line-height: 1;
+    margin: 0;
+    width: 55%;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  .head-text__text {
+    color: var(--color-Very-Dark-Magenta);
+    width: 80%;
+    margin: 0;
+  }
+  .ratings {
+    gap: 2rem;
+    width: 100%;
+    align-self: center;
+  }
+  .rating-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 3rem;
+    padding: 1.5rem 0rem 1.5rem 4rem;
+    width: 100%;
+    max-width: 45rem;
+  }
+  .testimonials {
+    flex-direction: row;
+    grid-column: 1/-1;
+    align-self: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .testimonial-card {
+    flex-direction: column;
+    max-width: 35rem;
+  }
+  .t1 {
+    transform: translateY(-2rem);
+  }
+  .t2 {
+    transform: translateY(2rem);
+  }
+  .rt1 {
+    transform: translateX(-4rem);
+  }
+  .rt2 {
+    transform: translateX(4rem);
+  }
+}
